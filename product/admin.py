@@ -12,5 +12,4 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ("title", "active")
 
-
 admin.site.register(Product, ProductAdmin)
