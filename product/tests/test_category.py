@@ -14,9 +14,9 @@ class TestCategories:
 
     def test_post_category(self):
         novo = {
-            "title": "Infantil",
-            "slug": "infantil",
-            "description": "Para crianças",
+            "title": "Comedia",
+            "slug": "comedia",
+            "description": "Engracado, divertido.",
             "active": True
         }
 
