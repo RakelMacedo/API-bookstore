@@ -21,11 +21,9 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 
 urlpatterns = [
-    path('__debug__/', include(debug_toolbar.urls)),
-    path('api-token-auth/', obtain_auth_token, name='api-token-auth'),
-
-    path('admin/', admin.site.urls),
-
-    re_path('bookstore/', include('order.urls')),
-    re_path('bookstore/', include('product.urls'))
+    path("__debug__/", include(debug_toolbar.urls)),
+    path("api-token-auth/", obtain_auth_token, name="api-token-auth"),
+    path("admin/", admin.site.urls),
+    re_path("bookstore/", include("order.urls")),
+    re_path("bookstore/", include("product.urls")),
 ]
