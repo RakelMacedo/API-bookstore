@@ -8,10 +8,7 @@ class TestCategories:
         response = requests.get(url=self.url_categories)
         assert response.status_code == 200
 
-    def test_get_categoy(self):
-        response = requests.get(url=f"{self.url_categories}1")
-        assert response.status_code == 200
-
+'''
     def test_post_category(self):
         novo = {
             "title": "Comedia",
@@ -24,6 +21,12 @@ class TestCategories:
         assert response.status_code == 201
         assert response.json()["title"] == novo["title"]
 
+
+    def test_get_categoy(self):
+        response = requests.get(url=f"{self.url_categories}1")
+        assert response.status_code == 200
+
+'''
 
 """
     def test_put_category(self):
