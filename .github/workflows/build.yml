@@ -30,4 +30,4 @@ jobs:
 
     - name: Test
       run: |
-        python manage.py pytest product/tests/ order/tests/
+        pytest product/tests/ order/tests/
