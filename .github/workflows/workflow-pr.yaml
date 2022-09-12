@@ -18,7 +18,7 @@ jobs:
 
       - name: Test
         run: |
-          python manage.py pytest product/tests/ order/tests/
+          pytest product/tests/ order/tests/
       - name: Wemake Python Stylguide
         uses: wemake-services/wemake-python-styleguide@0.16.0
         continue-on-error: true
