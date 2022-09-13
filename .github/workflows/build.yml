@@ -30,5 +30,6 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: Test
+      shell: bash
       run: |
         pytest product/tests/ order/tests/
