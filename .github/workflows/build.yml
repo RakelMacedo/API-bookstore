@@ -28,6 +28,10 @@ jobs:
       shell: bash 
       run: python manage.py migrate
       
+    - name: Create user
+      shell: bash 
+      run: ./user_create.sh
+      
     - name: Server and Tests
       shell: bash
       run: nohup python manage.py runserver 0.0.0.0:8000 & pytest product/tests/ order/tests/
