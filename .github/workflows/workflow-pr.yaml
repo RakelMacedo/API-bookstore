@@ -16,9 +16,6 @@ jobs:
         shell: bash
         run: pip install -r requirements.txt
 
-      - name: Test
-        run: |
-          pytest product/tests/ order/tests/
       - name: Wemake Python Stylguide
         uses: wemake-services/wemake-python-styleguide@0.16.0
         continue-on-error: true
