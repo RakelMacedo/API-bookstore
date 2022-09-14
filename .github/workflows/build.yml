@@ -24,6 +24,10 @@ jobs:
       shell: bash
       run: pip install -r requirements.txt
       
+    - name: Migrate 
+      shell: bash 
+      run: python manage.py migrate
+      
     - name: Server and Tests
       shell: bash
       run: nohup python manage.py runserver 0.0.0.0:8000 & pytest product/tests/ order/tests/
