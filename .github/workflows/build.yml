@@ -18,18 +18,12 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-
-    - name: Install dependencies
-      run: |
-          python -m pip install --upgrade pip
-          pip install flake8 pytest
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        
 
     - name: Install dependencies
       shell: bash
       run: pip install -r requirements.txt
 
     - name: Test
-      shell: bash
       run: |
         pytest product/tests/ order/tests/
