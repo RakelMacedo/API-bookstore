@@ -24,14 +24,18 @@ jobs:
       shell: bash
       run: pip install -r requirements.txt
       
-    - name: Migrate 
+    - name: Build Docker
       shell: bash 
-      run: python manage.py migrate
+      run: docker compose up -d --build
       
-    - name: Create user
+    - name: Migrate
       shell: bash 
-      run: ./manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'adminpass')"
+      run: docker compose exec web python manage.py migrate
       
-    - name: Server and Tests
+    - name: Create user 
       shell: bash
-      run: nohup python manage.py runserver 0.0.0.0:8000 & pytest product/tests/ order/tests/
+      run: docker compose exec web bash ./user_create.sh
+      
+    - name: Tests
+      shell: bash 
+      run: docker compose exec web pytest product/tests/ order/tests/
