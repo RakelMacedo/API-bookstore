@@ -24,9 +24,9 @@ jobs:
       shell: bash
       run: pip install -r requirements.txt
       
-    - name: Server
+    - name: Server and Tests
       shell: bash
-      run: python manage.py runserver
+      run: ./manage.py runserver > /dev/null 2>&1 & pytest product/tests/ order/tests/
 
     - name: Test
       run: |
