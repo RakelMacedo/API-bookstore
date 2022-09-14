@@ -27,7 +27,3 @@ jobs:
     - name: Server and Tests
       shell: bash
       run: ./manage.py runserver > /dev/null 2>&1 & pytest product/tests/ order/tests/
-
-    - name: Test
-      run: |
-        pytest product/tests/ order/tests/
