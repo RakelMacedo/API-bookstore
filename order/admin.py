@@ -5,3 +5,4 @@ from .models.order import Order
 
 admin.site.register(Order)
 
+
